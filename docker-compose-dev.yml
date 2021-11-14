@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    container_name: savings_calculator
+    restart: always
+    build: ./app
+    ports:
+      - "5000:5000"
+    command: streamlit run app.py
+
+  nginx:
+    container_name: nginx_savings_calculator
+    restart: always
+    build: ./nginx
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app
