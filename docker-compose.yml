@@ -13,11 +13,11 @@ services:
       - "8501:8501"
     command: streamlit run app.py
 
-##  nginx:
-#    container_name: nginx_savings_calculator
-#    restart: always
-#    build: ./nginx
-#    ports:
-#      - "80:80"
-#    depends_on:
-#      - app
+  nginx:
+    container_name: nginx_savings_calculator
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app

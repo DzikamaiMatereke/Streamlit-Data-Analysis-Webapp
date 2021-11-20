@@ -23,9 +23,12 @@ def main():
         st.dataframe(df)
     finally:
         st.write("Import function has failed")
-        
+
     
 
-
+    add_selectbox = st.sidebar.selectbox(
+        "How would you like to be contacted?",
+        ("Home", "Descriptive Analytics", "Predictice Analytics")
+    )
 if __name__=='__main__':
     main()
