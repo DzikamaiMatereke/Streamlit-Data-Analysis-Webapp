@@ -2,19 +2,19 @@ version: '3'
 
 services:
   app:
-    container_name: savings_calculator
+    container_name: web-server
     restart: always
     build: ./app
     #volumes:
     #        - ./src:/app/src:ro
     #hiding port to only expose reverse proxy
   
-    ports:
-      - "8501:8501"
+    #ports:
+    #  - "8501:8501"
     command: streamlit run app.py
 
   nginx:
-    container_name: nginx_savings_calculator
+    container_name: nginx_reverseproxy
     restart: always
     build: ./nginx
     ports:
